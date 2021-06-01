@@ -29,7 +29,7 @@ python spec_corr/spec_correction_together.py
 cd multi_head/
 python train_relWt_cntxt_fcnn.py
 ```
-#### urbandSound classification task:
+#### urbanSound classification task:
 ```
 cd urbanSound/
 python train_raw_CNN_LSTM_pl51_valSep_T1.py
