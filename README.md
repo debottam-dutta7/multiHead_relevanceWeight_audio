@@ -1,7 +1,7 @@
 ## multiHead_relevanceWeight_audio
 This project implements a front-end for learning audio time-frequency representations using multi-head relevance weighting. A 1-D Cosine modulated Gaussian filter-bank layer learns the t-f representation and multi-head relevance subnetworks generates weight masks to enhance the representations which are then fed to a neural classifier. 
 
-# ASC task:
+#### ASC task:
 ```
 cd ASC/
 ```
@@ -29,7 +29,7 @@ python spec_corr/spec_correction_together.py
 cd multi_head/
 python train_relWt_cntxt_fcnn.py
 ```
-# urbandSound clasification task:
+#### urbandSound clasification task:
 ```
 cd urbanSound/
 python train_raw_CNN_LSTM_pl51_valSep_T1.py
