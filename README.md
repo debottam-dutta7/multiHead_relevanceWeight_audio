@@ -1,5 +1,6 @@
 ## multiHead_relevanceWeight_audio
-This project implements a front-end for learning audio time-frequency representations using multi-head relevance weighting. A 1-D Cosine modulated Gaussian filter-bank layer learns the t-f representation and multi-head relevance subnetworks generates weight masks to enhance the representations which are then fed to a neural classifier. 
+This project implements a front-end for learning audio time-frequency representations using multi-head relevance weighting. A 1-D Cosine modulated Gaussian filter-bank layer learns the t-f representation and multi-head relevance subnetworks generates weight masks to enhance the representations which are then fed to a neural classifier. Dataset for ASC task can be found [here](https://zenodo.org/record/3819968#.YLjGSvkzZPY). 
+UrbanSound8k dataset can be downloaded from [here](https://urbansounddataset.weebly.com/urbansound8k.html).
 
 #### ASC task:
 ```
