@@ -20,14 +20,11 @@ from Net_learn_means_AcFB import AcFB
 
 #file_path = 'data_2020/'
 file_path = '/home/data/DCASE2020/TAU-urban-acoustic-scenes-2020-mobile-development/'
+csv_file = '../../asc_setup_files/fold1_train.csv'
+val_csv_file = '../../asc_setup_files/fold1_evaluate.csv'
+device_a_csv = '../../asc_setup_files/fold1_train_a_2003.csv'
 
-csv_file = '/home/debottamd/Hu-rep/save_raw_features/test_save-from-purviNet/spec-corr/fold1_train.csv'
-
-val_csv_file = '/home/debottamd/Hu-rep/save_raw_features/test_save-from-purviNet/spec-corr/fold1_evaluate.csv'
-
-device_a_csv = '/home/debottamd/Hu-rep/save_raw_features/test_save-from-purviNet/spec-corr/fold1_train_a_2003.csv'
-
-
+# Path to store the saved features
 OUTPATH = '/home/debottamd/Hu-rep/learned-features-huBaseline-joint-f80' 
 
 feature_type = 'mat'

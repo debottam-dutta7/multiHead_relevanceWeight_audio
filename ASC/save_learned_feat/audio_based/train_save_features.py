@@ -1,6 +1,4 @@
-"""
-train script for saving learned features using purvi's taslp net. 
-"""
+
 from __future__ import print_function
 
 import argparse
@@ -27,8 +25,8 @@ import soundfile as sf
 
 #OUTPATH = '/home/debottamd/Hu-rep/learned-features-with-base-specs/'
 OUTPATH = '/home/debottamd/Hu-rep/learned-features-huBaseline-joint-f80/'
-train_csv = '/home/debottamd/Hu-rep/learn-fbank/learn-means-purviNet/fold1_train_add_time_pitch_noise.csv'
-val_csv = '/home/debottamd/Hu-rep/learn-fbank/learn-means-purviNet/fold1_evaluate_absolute_path.csv'
+train_csv = '../../asc_setup_files/fold1_train_add_time_pitch_noise.csv'
+val_csv = '../../asc_setup_files/fold1_evaluate_absolute_path.csv'
 
 train_label_info, train_labels = load_file_absolute(train_csv)
 val_label_info, val_labels = load_file_absolute(val_csv)

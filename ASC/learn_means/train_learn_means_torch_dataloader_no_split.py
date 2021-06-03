@@ -26,8 +26,8 @@ import librosa
 
 experiment = 'exp_LM_baselineFull_joint_mixup_loss_ngf96_init_mel'
 
-train_csv = '/home/debottamd/Hu-rep/learn-fbank/learn-means-huBaseline-joint/with-mixup-loss-mean-init-no-shift/fold1_train_add_time_pitch_noise_scorr.csv'
-val_csv = '/home/debottamd/Hu-rep/learn-fbank/learn-means-purviNet/fold1_evaluate_absolute_path.csv'
+train_csv = '../asc_setup_files/fold1_train_add_time_pitch_noise_scorr.csv'
+val_csv = '../asc_setup_files/fold1_evaluate_absolute_path.csv'
 audio_path ='/home/data/DCASE2020/TAU-urban-acoustic-scenes-2020-mobile-development/'
 
 num_audio_channels = 1
@@ -152,8 +152,6 @@ def adjust_learning_rate(optimizer, lr):
         param_group['lr'] = lr
 
 
-
-
 def extract_segments(inlines, tarlines, hop_length=1024, win_length=2048, splice=10):
     segments_all = []
     labels_all = []
@@ -245,9 +243,6 @@ def deltas(X_in):
     X_out = (X_in[:,:,2:,:]-X_in[:,:,:-2,:])/10.0
     X_out = X_out[:,:,1:-1,:]+(X_in[:,:,4:,:]-X_in[:,:,:-4,:])/5.0
     return X_out
-
-
-
 
 
 def train(epoch):
@@ -421,8 +416,6 @@ if not os.path.exists(logname):
                 'train acc', 'test loss', 'test acc'])
 
 
-
-
 for epoch in range(start_epoch, num_epochs):
     start_time = time.time()
     train_loss, reg_loss, train_acc = train(epoch)
@@ -437,19 +430,6 @@ for epoch in range(start_epoch, num_epochs):
         logwriter = csv.writer(logfile, delimiter=',')
         logwriter.writerow([epoch, train_loss, reg_loss, train_acc.detach().numpy(), 
             test_loss, test_acc.detach().numpy()])
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

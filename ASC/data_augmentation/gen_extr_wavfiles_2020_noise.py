@@ -13,7 +13,7 @@ overwrite = True
 
 # Path to audio files of the format: file_path + 'audio/' + 'example.wav'
 file_path = '/home/data/DCASE2020/TAU-urban-acoustic-scenes-2020-mobile-development/'
-csv_file = './fold1_train_full.csv'
+csv_file = '../asc_setup_files/fold1_train_full.csv'
 output_path = './aug_wavfiles'
 
 feature_type = 'wav'

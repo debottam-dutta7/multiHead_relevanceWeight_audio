@@ -17,7 +17,7 @@ from scipy.io.wavfile import write
 
 # Path to audio files of the format: file_path + 'audio/' + 'example.wav'
 file_path = '/home/data/DCASE2020/TAU-urban-acoustic-scenes-2020-mobile-development/' 
-csv_file = './fold1_train.csv'
+csv_file = '../asc_setup_files/fold1_train.csv'
 val_csv_file = './fold1_evaluate.csv'
 device_a_csv = './fold1_train_a_2003.csv'
 

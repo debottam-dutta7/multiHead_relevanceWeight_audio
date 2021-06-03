@@ -23,10 +23,10 @@ from Net_fcnn_2head_sigmoid_relWt_cntxt import *
 
 experiment = 'relWt_2head_split_freq_skipConnect_catAfterAug_alignedAll'
 
+train_csv = '../asc_setup_files/fold1_train_add_time_pitch_noise_scorr.csv'
+val_csv = '../asc_setup_files/fold1_evaluate_absolute_path.csv'
 
-train_csv = '/home/debottamd/DCASE-Hu-fcnn_baseline/test-baseline/mel-80/fold1_train_add_time_pitch_noise_scorr.csv'
-val_csv = '/home/debottamd/DCASE-Hu-fcnn_baseline/test-baseline/mel-80/fold1_evaluate_absolute_path.csv'
-#audio_path = '/home/debottamd/Hu-rep/data-augmentation/aug_wavfiles/'
+# saved learned feature path
 feat_path = '/home/debottamd/Hu-rep/learned-features-huBaseline-joint-f80/'
 
 
@@ -35,14 +35,12 @@ num_freq_bin = 80
 num_classes = 10
 max_lr = 0.1
 batch_size = 32
-num_epochs = 140
+num_epochs = 130
 mixup_alpha = 0.4
 crop_length = 400
 splice = 10
 seed = 1
 augment = True
-
-
 
 use_cuda = torch.cuda.is_available()
 best_acc = 0       # best test accuracy
@@ -132,8 +130,6 @@ print("num_audio_channels:{}, num_freq_bin:{}, num_classes:{},".format(num_audio
 print("max_lr:{}, batch_size:{}, num_epochs:{}, use_cuda:{}, ".format(max_lr,batch_size,num_epochs,use_cuda))
 
 
-
-
 def mixup_data(x, y, alpha=0.4, use_cuda=True):
     '''Returns mixed inputs, pairs of targets, and lambda'''
     if alpha > 0:
@@ -209,7 +205,6 @@ def data_generation_2head(inputs1,inputs2):
     inputs2 = inputs2[:,:,0:crop_length,:]
 
     return inputs1, inputs2
-
 
 
 def deltas(X_in):
@@ -453,8 +448,6 @@ if not os.path.exists(logname):
                 'train acc', 'test loss', 'test acc'])
 
 
-
-
 for epoch in range(start_epoch, num_epochs):
     start_time = time.time()
     train_loss, reg_loss, train_acc = train(epoch)
@@ -470,20 +463,6 @@ for epoch in range(start_epoch, num_epochs):
         logwriter = csv.writer(logfile, delimiter=',')
         logwriter.writerow([epoch, train_loss, reg_loss, train_acc.detach().numpy(), 
             test_loss, test_acc.detach().numpy()])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
