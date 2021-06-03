@@ -13,8 +13,9 @@ from scipy.io.wavfile import write
 
 overwrite = True
 
+# Path to audio files of the format: file_path + 'audio/' + 'example.wav'
 file_path = '/home/data/DCASE2020/TAU-urban-acoustic-scenes-2020-mobile-development/'
-csv_file = '/home/debottamd/DCASE-Hu-fcnn_baseline/task1a/10class/evaluation_setup/fold1_train_full.csv'
+csv_file = './fold1_train_full.csv'
 output_path = './aug_wavfiles'
 
 feature_type = 'wav'
@@ -64,7 +65,6 @@ def data_add():
 
             cur_file_name = output_path + '/' + file.split('.')[0] + '_add.' + 'wav'
 
-            #pickle.dump(feature_data, open(cur_file_name, 'wb'), protocol=pickle.HIGHEST_PROTOCOL)
             write(cur_file_name, sample_rate, stereo)
 
 

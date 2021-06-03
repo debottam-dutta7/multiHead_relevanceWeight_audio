@@ -9,13 +9,11 @@ from multiprocessing import Pool
 from scipy.io.wavfile import write
 import time
 
-
 overwrite = True
 
+# Path to audio files of the format: file_path + 'audio/' + 'example.wav'
 file_path = '/home/data/DCASE2020/TAU-urban-acoustic-scenes-2020-mobile-development/'
-
-csv_file = '/home/debottamd/DCASE-Hu-fcnn_baseline/task1a/10class/evaluation_setup/fold1_train_full.csv'
-
+csv_file = './fold1_train_full.csv'
 output_path = './aug_wavfiles'
 
 feature_type = 'wav'
@@ -40,7 +38,7 @@ for i in range(len(wavpath)):
     
 
     cur_file_name = output_path + wavpath[i][5:-4] + '_noise.' + 'wav'
-    #pickle.dump(feature_data, open(cur_file_name, 'wb'), protocol=pickle.HIGHEST_PROTOCOL)
+    
     write(cur_file_name, fs, stereo)
         
 t = time.time()

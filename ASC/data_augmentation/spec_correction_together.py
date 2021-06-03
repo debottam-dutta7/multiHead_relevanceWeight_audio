@@ -15,18 +15,14 @@ import scipy.io as sio
 import scipy
 from scipy.io.wavfile import write
 
-
-#file_path = 'data_2020/'
-file_path = '/home/data/DCASE2020/TAU-urban-acoustic-scenes-2020-mobile-development/'
-
-csv_file = '/home/debottamd/Hu-rep/save_raw_features/test_save-from-purviNet/spec-corr/fold1_train.csv'
-
-val_csv_file = '/home/debottamd/Hu-rep/save_raw_features/test_save-from-purviNet/spec-corr/fold1_evaluate.csv'
-
-device_a_csv = '/home/debottamd/Hu-rep/save_raw_features/test_save-from-purviNet/spec-corr/fold1_train_a_2003.csv'
+# Path to audio files of the format: file_path + 'audio/' + 'example.wav'
+file_path = '/home/data/DCASE2020/TAU-urban-acoustic-scenes-2020-mobile-development/' 
+csv_file = './fold1_train.csv'
+val_csv_file = './fold1_evaluate.csv'
+device_a_csv = './fold1_train_a_2003.csv'
 
 OUTPATH = './aug_wavfiles'
-#OUTPATH = './test_data'
+
 
 feature_type = 'wav'
 
